@@ -6,9 +6,9 @@
 #include <chrono>
 
 struct LoadBalancerConfig {
-    std::string algorithm_ = "round_robin"; // round_robin, least_connections, ip_hash
-    int health_check_interval_ = 30; // секунды
-    int session_timeout_ = 300; // секунды
+    std::string algorithm_ = "round_robin"; 
+    int health_check_interval_ = 30; 
+    int session_timeout_ = 300; 
     bool sticky_sessions_ = true;
 };
 
@@ -18,7 +18,7 @@ struct Server {
     int port_;
     bool is_healthy_;
     int active_connections_;
-    int weight_; // для взвешенного распределения
+    int weight_; 
     std::chrono::steady_clock::time_point last_health_check_;
     
     bool CheckHealth();
